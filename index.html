@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <!----google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!----fontawasome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--css-->
+   
+    <link rel="stylesheet" href="css/all.min.css">
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section>
+<div class="container py-5 bg-body-secondary rounded-4">
+<h1 class="text-center pt-3">OPERATION SYSTEM</h1>
+ <div class="inputsData" id="productForm">
+
+<div>
+    <label for="ProductName">Product Name</label>
+<input type="text" id="ProductName" class="form-control" placeholder="Enter Product Name" oninput="validationName()">
+<div class="alert alert-danger d-none  " id="nameError"> your word must be between 4 and 8 letters</div>
+
+</div>
+<div>
+    <label for="ProductPrice">Product Price</label>
+<input type="text" id="ProductPrice" class="form-control" placeholder="Enter Product Price"  oninput="validationPrice()">
+<div class="alert alert-danger d-none  " id="priceError"> your price must be between 1000 and 10000 LE</div>
+
+</div>
+<div>
+    <label for="ProductType">Product Type</label>
+<input type="text" id="ProductType" class="form-control" placeholder="Enter Product Type"  oninput="validationType()">
+<div class="alert alert-danger d-none  " id="typeError"> your poduct must be mobil, watch, screen</div>
+
+</div>
+<div>
+    <label for="ProductDesc">Product Desc</label>
+<input type="text" id="ProductDesc" class="form-control" placeholder="Enter Product Desc"  oninput="validationDesc()">
+<div class="alert alert-danger d-none  " id="descError"> your des must be between 3 and 500 LE</div>
+
+</div>
+
+     <div class="text-center py-4">
+                <button onclick="addProduct()" class="btn btn-dark w-50 rounded-pill d-block mx-auto " id="addButton" >Add Product</button>
+                <button onclick="updateProduct()" class="btn btn-dark w-50 rounded-pill d-none mx-auto" id="updateButton">Update Product</button>
+                </div>
+                 </div>
+             <input oninput="searchProduct()" type="search" id="searchInput" class="form-control mx-auto w-50 my-4" placeholder="Search">
+           
+
+
+
+            
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">price</th>
+                    <th scope="col">type</th>
+                    <th scope="col">desc</th>
+                    <th scope="col">actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+
+
+        </div>
+    </section>
+<!-- Modal -->
+<div class="modal fade" id="validationModal" tabindex="-1" aria-labelledby="validationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="validationModalLabel">خطأ في الإدخال</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="إغلاق"></button>
+      </div>
+      <div class="modal-body">
+        من فضلك تأكد من ملء كل الحقول بشكل صحيح.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">حسنًا</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
